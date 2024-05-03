@@ -1,0 +1,47 @@
+﻿@model IEnumerable<SistemaControleVendas.Models.Login>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Login</h1>
+
+<p>
+    <a asp-action="Create"> <button type="button" class="btn btn-outline-secondary">Cadastrar Novo</button></a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.LoginEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Senha)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NivelAcesso)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.LoginEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Senha)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NivelAcesso)
+            </td>
+            <td>
+                 <a asp-action="Edit" asp-route-id="@item.LoginID"><button type="button" class="btn btn-primary"><i class="bi bi-pencil"></i> Editar</button></a>|
+                 <a asp-action="Details" asp-route-id="@item.LoginID"><button type="button" class="btn btn-secondary"><i class="bi bi-card-list"></i>Detalhes</button></a>|
+                 <a asp-action="Delete" asp-route-id="@item.LoginID"><button type="button" class="btn btn-danger"><i class="bi bi-trash3"></i>Excluir</button></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,54 @@
+﻿@model SistemaControleVendas.Models.Venda
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Cadastrar Venda</h1>
+
+<h4></h4>
+<hr />
+<div class="container">
+    <form asp-action="Create" class="row g-3">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="col-md-4">
+                <label asp-for="DtCad" class="form-label">Data Cadastro</label>
+                <input asp-for="DtCad" class="form-control" id="DtCad">
+                <span asp-validation-for="DtCad" class="text-danger"></span>
+            </div>
+            <div class="col-md-4">
+                <label asp-for="FuncionarioID" class="control-label"></label>
+                <input asp-for="FuncionarioID" class="form-control" />
+                <span asp-validation-for="FuncionarioID" class="text-danger"></span>
+            </div>
+            <div class="col-md-4">
+                <label asp-for="ClienteID" class="control-label"></label>
+                <input asp-for="ClienteID" class="form-control" />
+                <span asp-validation-for="ClienteID" class="text-danger"></span>
+            </div>
+            <div class="col-md-6">
+                <label asp-for="ProdutoID" class="control-label"></label>
+                <input asp-for="ProdutoID" class="form-control" />
+                <span asp-validation-for="ProdutoID" class="text-danger"></span>
+            </div>
+            <div class="col-md-6">
+                <label asp-for="ValorTotal" class="control-label"></label>
+                <input asp-for="ValorTotal" class="form-control" />
+                <span asp-validation-for="ValorTotal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Cadastrar" class="btn btn-primary" />
+            </div>
+        </form>
+   
+
+
+<div>
+    <a asp-action="Index">Voltar</a>
+</div>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+

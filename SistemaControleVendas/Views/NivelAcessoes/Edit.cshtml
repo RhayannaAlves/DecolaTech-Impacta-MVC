@@ -1,0 +1,36 @@
+﻿@model SistemaControleVendas.Models.NivelAcesso
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Editar Cadastro</h1>
+
+<h4>Nível de Acesso</h4>
+<hr />
+<div class="container">
+    <form asp-action="Edit" class="row g-3">
+        <div class="col-md-6">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="NivelAcessoID" />
+            <div class="form-group">
+                <label asp-for="TipoUsuario" class="control-label"></label>
+                <input asp-for="TipoUsuario" class="form-control" />
+                <span asp-validation-for="TipoUsuario" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Salvar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+
+<div>
+    <div class="form-group"></div>
+    <a asp-action="Index">Voltar</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
